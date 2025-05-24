@@ -17,6 +17,15 @@ body {
     padding: 5px 0px;
 }
 
+.nav>div {
+    flex-shrink: 0;
+}
+
+.nav>form {
+    flex: 1 1 0px;
+    display: flex;
+}
+
 .nav-logo_div {
     height: 50px;
     width: 114px;
@@ -75,7 +84,7 @@ body {
 .nav-search {
     display: flex;
     height: 40px;
-    width: 1202.3px;
+    flex: 1 1 0px;
     margin: 0px 21px;
     background: white;
     border-radius: 4px;
@@ -106,9 +115,15 @@ body {
     background-position: 35px 18px;
 }
 
+.bar {
+    flex: 1 1 0px;
+    display: flex;
+}
+
 .bar>input {
     height: 40px;
-    width: 1105.3px;
+    flex: 1 1 0px;
+    display: flex;
     border: none;
     line-height: 15px;
     font-size: 15px;
@@ -356,9 +371,13 @@ body {
     z-index: -10;
 }
 
+.main .scroll img {
+    flex: 1 1 0px;
+}
+
 .main .background {
     width: 1500px;
-    height: 600px;
+    height: fit-content;
 }
 
 .button_div {
@@ -427,9 +446,10 @@ body {
 
 .card {
     height: 420px;
-    width: 350px;
+    width: 285px;
     background: white;
     padding: 20px 0px 15px 0px;
+    flex-grow: 1;
 }
 
 .card .text {
@@ -442,9 +462,10 @@ body {
 }
 
 .card .img {
-    height: 303.7px;
-    width: 310px;
+    height: 79%;
+    width: 90%;
     margin: auto;
+    background-repeat: no-repeat;
     background-position: center;
     background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/Stores-Gaming/FinalGraphics/Fuji_Gaming_store_Dashboard_card_1x_EN._SY304_CB564799420_.jpg);
 }
@@ -464,6 +485,7 @@ body {
     margin: 0px 0px 20px 0px;
     background: white;
     padding: 10px 20px;
+    overflow: hidden;
 }
 
 .scrollb>div:first-child {
@@ -488,7 +510,6 @@ body {
 .scrollb>div:last-child {
     height: 220px;
     display: flex;
-    width: 1420px;
     align-items: center;
     gap: 0 10px;
     overflow-x: auto;
@@ -547,7 +568,7 @@ footer {
 
 .f1 {
     background: #232f3e;
-    height: 371.6px;
+    height: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -555,8 +576,10 @@ footer {
 
 .f1>div {
     width: 1000px;
-    height: 291.6px;
+    height: fit-content;
     display: flex;
+    gap: 0px max(70px);
+    flex-wrap: wrap;
 }
 
 .f1>div>div {
@@ -662,7 +685,7 @@ hr {
 }
 
 .f3 {
-    height: 441.9px;
+    height: fit-content;
     background: #131a22;
     display: flex;
     align-items: center;
@@ -671,17 +694,28 @@ hr {
 }
 
 .f3>div:first-child {
-    height: 300px;
+    height: fit-content;
     width: 1000px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px 23px;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .f3>div:first-child>div {
     height: 53.9px;
     width: 122.5px;
+}
+
+.f3>div:nth-child(2) {
+    padding-top: 20px;
+    height: max-content;
+}
+
+.f3>div:last-child {
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
 
 .f3 h5 {
@@ -714,6 +748,60 @@ hr {
     height: 14px;
     background-image: url(https://m.media-amazon.com/images/G/01/gno/sprites/nav-sprite-global-1x-reorg-privacy._CB546805360_.png);
 }
-.f3>div:last-child{
+
+.f3>div:last-child {
     color: #dddddd;
+}
+
+@media (max-width: 1500px) {
+    .main .background {
+        width: 100vw;
+    }
+
+    .main .scroll {
+        width: 100vw;
+    }
+
+    .btn_right {
+        margin-left: calc(100vw - 168px);
+    }
+
+    .btn {
+        height: 16.5vw;
+    }
+
+    .notification {
+        width: calc(100vw - 40px);
+    }
+
+    .content {
+        width: calc(100vw - 40px);
+    }
+
+    .scrollb {
+        width: calc(100vw - 40px);
+    }
+
+    .scrollb>div:nth-child(2) {
+        width: calc(100vw - 80px);
+    }
+
+    .scroll_space1 {
+        width: calc(100vw - 80px);
+    }
+}
+
+@media (max-width: 1000px) {
+    .f1>div {
+        width: calc(100vw - 40px);
+        height: auto;
+    }
+
+    .f1 {
+        height: fit-content;
+    }
+
+    .f3>div:first-child {
+        width: calc(100vw - 40px);
+    }
 }
